@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "127038696297",
+    "project_id": "fashion-find-14a06",
+    "storage_bucket": "fashion-find-14a06.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:127038696297:android:f26223634a36ec59caebf8",
+        "android_client_info": {
+          "package_name": "com.example.fashion_find"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDRkOd97KJdq-ENvxmbRe75kTcOFewcFOk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

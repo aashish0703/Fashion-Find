@@ -1,0 +1,2 @@
+/Users/aashish/Desktop/StudioProjects/Projects/fashion_find/android/app/.cxx/RelWithDebInfo/694c2n5h/x86/CMakeFiles/edit_cache.dir
+/Users/aashish/Desktop/StudioProjects/Projects/fashion_find/android/app/.cxx/RelWithDebInfo/694c2n5h/x86/CMakeFiles/rebuild_cache.dir
