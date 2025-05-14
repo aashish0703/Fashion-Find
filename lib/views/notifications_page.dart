@@ -1,4 +1,3 @@
-import 'package:fashion_find/authentication/presentation/bloc/auth_bloc.dart';
 import 'package:fashion_find/bloc/bloc_notifications/notifications_bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -31,9 +30,9 @@ class NotificationsPage extends StatelessWidget {
                     child: ListTile(
                       title: const Text("Notifications"),
                       trailing: Switch(
-                          value: false,
+                          value: value,
                           onChanged: (value) {
-                            context.read<NotificationsBloc>().toggleSwitch(value);
+                            context.read<NotificationsBloc>().toggleSwitch();
                           }
                       ),
                     ),

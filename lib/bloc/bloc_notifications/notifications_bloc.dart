@@ -7,8 +7,8 @@ class NotificationsBloc extends Bloc<NotificationsEvent, NotificationsState> {
 
   ValueNotifier<bool> isSelected = ValueNotifier(false);
 
-  void toggleSwitch(bool value) {
-    isSelected.value = value;
+  void toggleSwitch() {
+    isSelected.value = !isSelected.value;
   }
 
   NotificationsBloc() : super(NotificationsInitialState());

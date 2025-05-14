@@ -6,6 +6,7 @@ import 'package:skeletonizer/skeletonizer.dart';
 import '../../../bloc/bloc_banners/banners_bloc.dart';
 import '../../../bloc/bloc_banners/banners_state.dart';
 import '../../../model/banner_model.dart';
+import '../../../route_generator/routes.dart';
 import '../../../util/widgets/custom_image.dart';
 
 class BannersWidget extends StatelessWidget {
@@ -111,21 +112,28 @@ class BannersWidget extends StatelessWidget {
                           aspectRatio: 16/9
                         ),
                         itemBuilder: (context, index, realIdx) {
-                          return Container(
-                            margin: const EdgeInsets.symmetric(horizontal: 3 , vertical: 8),
-                            decoration:  BoxDecoration(
-                              borderRadius:BorderRadius.circular(10) ,
-                              boxShadow: const [
-                                BoxShadow(
-                                  color: Colors.grey,
-                                  blurRadius: 10,
-                                  blurStyle: BlurStyle.outer
-                                )
-                              ]
+                          return GestureDetector(
+                            onTap: () {
+                              if(index == 2) {
+                                Navigator.pushNamed(context, Routes.productPage);
+                              }
+                            },
+                            child: Container(
+                              margin: const EdgeInsets.symmetric(horizontal: 3 , vertical: 8),
+                              decoration:  BoxDecoration(
+                                borderRadius:BorderRadius.circular(10) ,
+                                boxShadow: const [
+                                  BoxShadow(
+                                    color: Colors.grey,
+                                    blurRadius: 10,
+                                    blurStyle: BlurStyle.outer
+                                  )
+                                ]
+                              ),
+                              child: ClipRRect(
+                                  borderRadius: BorderRadius.circular(10),
+                                  child: CustomImage(url: bannerList[0].images[index])),
                             ),
-                            child: ClipRRect(
-                                borderRadius: BorderRadius.circular(10),
-                                child: CustomImage(url: bannerList[0].images[index])),
                           );
                         },
                       );
