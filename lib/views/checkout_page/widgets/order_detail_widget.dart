@@ -24,12 +24,13 @@ class OrderDetailWidget extends StatelessWidget {
                     children: [
                       Row(
                         children: [
-                          Text("Date: ", style: Theme.of(context).textTheme.titleMedium,),
-                          SizedBox(width: MediaQuery.of(context).size.width*0.1,),
-                          Text("${state.orderList[index].createdAt.day}"
-                              "/${state.orderList[index].createdAt.month}"
-                              "/${state.orderList[index].createdAt.year}",
-                            style: Theme.of(context).textTheme.titleMedium,
+                          Expanded(child: Text("Date: ", style: Theme.of(context).textTheme.titleMedium,)),
+                          Expanded(
+                            child: Text("${state.orderList[index].createdAt.day}"
+                                "/${state.orderList[index].createdAt.month}"
+                                "/${state.orderList[index].createdAt.year}",
+                              style: Theme.of(context).textTheme.titleMedium,
+                            ),
                           ),
                         ],
                       ),
@@ -38,11 +39,12 @@ class OrderDetailWidget extends StatelessWidget {
                       ),
                       Row(
                         children: [
-                          Text("Total amount: ", style: Theme.of(context).textTheme.titleMedium,),
-                          SizedBox(width: MediaQuery.of(context).size.width*0.1,),
-                          Text(
-                            "${state.orderList[index].totalAmount}",
-                            style: Theme.of(context).textTheme.titleMedium,
+                          Expanded(child: Text("Total amount: ", style: Theme.of(context).textTheme.titleMedium,)),
+                          Expanded(
+                            child: Text(
+                              "₹${state.orderList[index].totalAmount.toStringAsFixed(2)}",
+                              style: Theme.of(context).textTheme.titleMedium,
+                            ),
                           ),
                         ],
                       ),

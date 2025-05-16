@@ -48,7 +48,7 @@ class OrdersBloc extends Bloc<OrdersEvent, OrdersState> {
 
       var options = {
         'key': 'rzp_live_ILgsfZCZoFIKMb',
-        'amount': event.totalAmount * 100,
+        'amount': (event.totalAmount * 100).toInt(),
         'name': "Fashion Find",
         'description': "Payment for order",
         'prefill': {

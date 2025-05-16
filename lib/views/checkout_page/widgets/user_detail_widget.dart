@@ -33,13 +33,12 @@ class UserDetailWidget extends StatelessWidget {
                     return Column(
                       children: [
                         SizedBox(
-                          height: MediaQuery.of(context).size.height * 0.11,
+                          height: MediaQuery.of(context).size.height * 0.06,
                         ),
                         Row(
                           children: [
-                            Text("Name:",  style: Theme.of(context).textTheme.titleMedium,),
-                            SizedBox(width: MediaQuery.of(context).size.width*0.1,),
-                            Text(userData.name,  style: Theme.of(context).textTheme.titleMedium,)
+                            Expanded(child: Text("Name:",  style: Theme.of(context).textTheme.titleMedium,)),
+                            Expanded(child: Text(userData.name,  style: Theme.of(context).textTheme.titleMedium,))
                           ],
                         ),
                         SizedBox(
@@ -47,9 +46,8 @@ class UserDetailWidget extends StatelessWidget {
                         ),
                         Row(
                           children: [
-                            Text("Contact:",  style: Theme.of(context).textTheme.titleMedium,),
-                            SizedBox(width: MediaQuery.of(context).size.width*0.1,),
-                            Text(userData.contact,  style: Theme.of(context).textTheme.titleMedium,)
+                            Expanded(child: Text("Contact:",  style: Theme.of(context).textTheme.titleMedium,)),
+                            Expanded(child: Text(userData.contact,  style: Theme.of(context).textTheme.titleMedium,))
                           ],
                         ),
                         SizedBox(
@@ -57,9 +55,8 @@ class UserDetailWidget extends StatelessWidget {
                         ),
                         Row(
                           children: [
-                            Text("Address:",  style: Theme.of(context).textTheme.titleMedium,),
-                            SizedBox(width: MediaQuery.of(context).size.width*0.1,),
-                            Text(userData.primaryAddress,  style: Theme.of(context).textTheme.titleMedium,)
+                            Expanded(child: Text("Address:",  style: Theme.of(context).textTheme.titleMedium,)),
+                            Expanded(child: Text(userData.primaryAddress,  style: Theme.of(context).textTheme.titleMedium,))
                           ],
                         ),
                       ],

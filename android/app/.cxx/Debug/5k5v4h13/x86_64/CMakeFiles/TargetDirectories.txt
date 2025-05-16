@@ -1,0 +1,2 @@
+/Users/aashish/Desktop/FashionFind/android/app/.cxx/Debug/5k5v4h13/x86_64/CMakeFiles/edit_cache.dir
+/Users/aashish/Desktop/FashionFind/android/app/.cxx/Debug/5k5v4h13/x86_64/CMakeFiles/rebuild_cache.dir

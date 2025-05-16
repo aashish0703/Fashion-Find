@@ -1,0 +1,2 @@
+/Users/aashish/Desktop/FashionFind/android/app/.cxx/RelWithDebInfo/4f2u152o/armeabi-v7a/CMakeFiles/edit_cache.dir
+/Users/aashish/Desktop/FashionFind/android/app/.cxx/RelWithDebInfo/4f2u152o/armeabi-v7a/CMakeFiles/rebuild_cache.dir

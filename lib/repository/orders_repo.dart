@@ -36,7 +36,7 @@ class OrdersRepo {
 
     await docRef.update({"id" : docRef.id});
 
-    clearCart(userId);
+    // clearCart(userId);
   }
 
   Future<void> clearCart(String userId) async {

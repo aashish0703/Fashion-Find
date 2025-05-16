@@ -42,7 +42,7 @@ class _CheckoutPageState extends State<CheckoutPage> {
                 Center(
                     child: Container(
                       padding: const EdgeInsets.all(12),
-                      height: MediaQuery.of(context).size.height * 0.5,
+                      height: MediaQuery.of(context).size.height * 0.45,
                       width: MediaQuery.of(context).size.width * 0.7,
                       decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(10),
@@ -56,7 +56,7 @@ class _CheckoutPageState extends State<CheckoutPage> {
                           ),
                           const OrderDetailWidget(),
                           SizedBox(
-                            height: MediaQuery.of(context).size.height * 0.04,
+                            height: MediaQuery.of(context).size.height * 0.02,
                           ),
                           BlocBuilder<OrdersBloc, OrdersState>(
                             builder: (context, state) {
@@ -85,10 +85,10 @@ class _CheckoutPageState extends State<CheckoutPage> {
                 )
               ],
             ),
-            const Positioned(
+            Positioned(
               top: 50,
-              left: 150,
-              child: SizedBox(
+              left: MediaQuery.of(context).size.width*0.38,
+              child: const SizedBox(
                 child: CircleAvatar(
                   radius: 50,
                   backgroundColor: Color.fromRGBO(251, 234, 213, 1),

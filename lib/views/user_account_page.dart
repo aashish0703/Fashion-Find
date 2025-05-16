@@ -1,6 +1,5 @@
 import 'package:fashion_find/bloc/bloc_landing_page/landing_page_bloc.dart';
 import 'package:fashion_find/bloc/bloc_landing_page/landing_page_event.dart';
-import 'package:fashion_find/bloc/bloc_login/login_bloc.dart';
 import 'package:fashion_find/bloc/bloc_user_account_page/user_account_page_bloc.dart';
 import 'package:fashion_find/bloc/bloc_user_account_page/user_account_page_event.dart';
 import 'package:fashion_find/bloc/bloc_user_account_page/user_account_page_state.dart';
@@ -37,13 +36,6 @@ class _UserAccountPageState extends State<UserAccountPage> {
   Widget build(BuildContext context) {
     return PopScope(
       canPop: false,
-      onPopInvokedWithResult: (bool didPop, result) {
-        if (didPop) {
-          Navigator.pushNamedAndRemoveUntil(context, Routes.homePage, (Route<dynamic> route) => false);
-        } else {
-          return;
-        }
-      },
       child: Scaffold(
         appBar: AppBar(
           title: const Text("User Account"),
