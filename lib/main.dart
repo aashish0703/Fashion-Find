@@ -66,6 +66,7 @@ class MyApp extends StatelessWidget {
       child: MaterialApp(
         title: "Fashion Find",
         theme: buildThemeData(),
+        debugShowCheckedModeBanner: false,
         home: const SplashPage(),
         initialRoute: "/",
         onGenerateRoute: RouteGenerator.generateRoutes,
