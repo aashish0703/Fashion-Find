@@ -12,7 +12,20 @@
           "package_name": "com.example.fashion_find"
         }
       },
-      "oauth_client": [],
+      "oauth_client": [
+        {
+          "client_id": "127038696297-6v5sit4cird9hpdjc9aqg2tb863pgt45.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.fashion_find",
+            "certificate_hash": "5c999311c1c06a7d89315f8c2b6c69362c77d336"
+          }
+        },
+        {
+          "client_id": "127038696297-u4k0ei91gnartshcg0mmk1tvu8to9sh3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
       "api_key": [
         {
           "current_key": "AIzaSyDRkOd97KJdq-ENvxmbRe75kTcOFewcFOk"
@@ -20,7 +33,19 @@
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": []
+          "other_platform_oauth_client": [
+            {
+              "client_id": "127038696297-u4k0ei91gnartshcg0mmk1tvu8to9sh3.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "127038696297-24t8kt11hsl77k48fkc9b8kkudd5gqbu.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.fashionFind"
+              }
+            }
+          ]
         }
       }
     }
