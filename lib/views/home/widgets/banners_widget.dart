@@ -5,6 +5,8 @@ import 'package:skeletonizer/skeletonizer.dart';
 
 import '../../../bloc/bloc_banners/banners_bloc.dart';
 import '../../../bloc/bloc_banners/banners_state.dart';
+import '../../../bloc/bloc_product_page/product_page_bloc.dart';
+import '../../../bloc/bloc_product_page/product_page_event.dart';
 import '../../../model/banner_model.dart';
 import '../../../route_generator/routes.dart';
 import '../../../util/widgets/custom_image.dart';
@@ -115,7 +117,10 @@ class BannersWidget extends StatelessWidget {
                           return GestureDetector(
                             onTap: () {
                               if(index == 2) {
-                                Navigator.pushNamed(context, Routes.productPage);
+                                context.read<ProductPageBloc>().add(
+                                    LoadSubSubCategoryProductEvent(
+                                        subSubcategoryId: "ssc-mtwshirts-03"));
+                                Navigator.pushNamed(context, Routes.productPage, arguments: "Shirts");
                               }
                             },
                             child: Container(

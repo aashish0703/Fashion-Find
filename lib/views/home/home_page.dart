@@ -3,17 +3,9 @@ import 'package:fashion_find/bloc/bloc_banners/banners_bloc.dart';
 import 'package:fashion_find/bloc/bloc_banners/banners_event.dart';
 import 'package:fashion_find/bloc/bloc_categories/categories_bloc.dart';
 import 'package:fashion_find/bloc/bloc_categories/categories_event.dart';
-import 'package:fashion_find/bloc/bloc_home/home_bloc.dart';
-import 'package:fashion_find/bloc/bloc_home/home_event.dart';
-import 'package:fashion_find/bloc/bloc_home/home_state.dart';
 import 'package:fashion_find/bloc/bloc_home_products/home_products_bloc.dart';
 import 'package:fashion_find/bloc/bloc_home_products/home_products_event.dart';
-import 'package:fashion_find/bloc/bloc_home_products/home_products_state.dart';
-import 'package:fashion_find/model/product_model.dart';
-import 'package:fashion_find/route_generator/routes.dart';
 import 'package:fashion_find/util/widgets/custom_button.dart';
-import 'package:fashion_find/util/widgets/custom_image.dart';
-import 'package:fashion_find/util/widgets/custom_snackbar.dart';
 import 'package:fashion_find/views/home/widgets/banners_widget.dart';
 import 'package:fashion_find/views/home/widgets/category_widget.dart';
 import 'package:fashion_find/views/home/widgets/home_product_widget.dart';
@@ -21,7 +13,6 @@ import 'package:fashion_find/views/home/widgets/search_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:skeletonizer/skeletonizer.dart';
 
 
 class HomePage extends StatefulWidget {

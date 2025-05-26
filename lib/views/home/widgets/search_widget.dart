@@ -59,7 +59,6 @@ class SearchWidget extends StatelessWidget {
                 if(state is SearchErrorState) {
                   return const Center(child: Text("something went wrong"),);
                 }
-
                 return const SizedBox.shrink();
               }
           )
