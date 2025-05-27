@@ -62,8 +62,6 @@ class _HomePageState extends State<HomePage> {
                   const CategoryWidget(),
                   SizedBox(height: MediaQuery.of(context).size.height* 0.03,),
                   const HomeProductWidget(),
-                  SizedBox(height: MediaQuery.of(context).size.height* 0.03,),
-                  const BannersWidget(),
                 ],
               ),
             ),

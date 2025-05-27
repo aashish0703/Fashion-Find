@@ -1,4 +1,4 @@
-import 'package:fashion_find/bloc/bloc_product_page/product_page_event.dart';
+
 import 'package:fashion_find/route_generator/routes.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -8,6 +8,7 @@ import '../../../bloc/bloc_product_page/product_page_bloc.dart';
 import '../../../bloc/bloc_product_page/product_page_state.dart';
 import '../../../model/product_model.dart';
 import '../../../util/widgets/custom_image.dart';
+import '../../../util/widgets/custom_snackbar.dart';
 
 class ProductCardWidget extends StatelessWidget {
   const ProductCardWidget({
@@ -253,8 +254,10 @@ class ProductCardWidget extends StatelessWidget {
                                                   var productData = productDetailList[index];
                                                   if(await bloc.isProductWishList(productData.productId)) {
                                                     bloc.removeProductFromWishList(productData.productId);
+                                                    CustomSnackBar.show(context, "Product removed from wishlist");
                                                   } else {
                                                     bloc.saveProductToWishList(productData.productId);
+                                                    CustomSnackBar.show(context, "Product added to wishlist");
                                                   }
                                                 },
                                                 isSelected: false,

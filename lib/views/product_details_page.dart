@@ -26,6 +26,8 @@ class ProductDetailsPage extends StatefulWidget {
 
 class _ProductDetailsPageState extends State<ProductDetailsPage> {
 
+  String? selectedSize;
+
   @override
   Widget build(BuildContext context) {
 
@@ -135,32 +137,55 @@ class _ProductDetailsPageState extends State<ProductDetailsPage> {
                     const SizedBox(height: 20,),
                     Text("Size", style: Theme.of(context).textTheme.titleLarge,),
                     const SizedBox(height: 10,),
-                    SizedBox(
-                      height: MediaQuery.of(context).size.width*0.15,
-                      child: ListView.builder(
-                        shrinkWrap: true,
-                        scrollDirection: Axis.horizontal,
-                        itemCount: widget.productDetails.size.length,
-                          itemBuilder: (context, index) {
-                            return GestureDetector(
-                              onTap: () {
-                                CustomSnackBar.show(context, "Work in progress");
-                              },
-                              child: Container(
-                                // margin: const EdgeInsets.symmetric(horizontal: 5),
-                                margin: const EdgeInsets.only(right: 5),
-                                height: MediaQuery.of(context).size.width*0.15,
-                                width: MediaQuery.of(context).size.width*0.15,
-                                decoration: BoxDecoration(
-                                  border: Border.all(color: Colors.black),
-                                  borderRadius: BorderRadius.circular(10)
-                                ),
-                                child: Center(child: Text(widget.productDetails.size[index])),
-                              ),
-                            );
-                          }
-                      ),
+                    Wrap(
+                      spacing: 8,
+                      children: widget.productDetails.size.map((size) {
+                        final isSelected = selectedSize == size;
+                        return ChoiceChip(
+                            label: Text(size),
+                            selected: isSelected,
+                          onSelected: (selected) {
+                            setState(() {
+                              selectedSize = selected ? size : null;
+                            });
+                          },
+                          // selectedColor: Colors.black,  // background color when selected
+                          // backgroundColor: Colors.transparent,  // unselected chip background
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(10),
+                            side: const BorderSide(color: Colors.black),
+                          ),
+                          // padding: EdgeInsets.zero,  // Optional: tighter fit
+                          labelPadding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+                        );
+                      }).toList(),
                     ),
+                    // SizedBox(
+                    //   height: MediaQuery.of(context).size.width*0.15,
+                    //   child: ListView.builder(
+                    //     shrinkWrap: true,
+                    //     scrollDirection: Axis.horizontal,
+                    //     itemCount: widget.productDetails.size.length,
+                    //       itemBuilder: (context, index) {
+                    //         return GestureDetector(
+                    //           onTap: () {
+                    //             CustomSnackBar.show(context, "Work in progress");
+                    //           },
+                    //           child: Container(
+                    //             // margin: const EdgeInsets.symmetric(horizontal: 5),
+                    //             margin: const EdgeInsets.only(right: 5),
+                    //             height: MediaQuery.of(context).size.width*0.15,
+                    //             width: MediaQuery.of(context).size.width*0.15,
+                    //             decoration: BoxDecoration(
+                    //               border: Border.all(color: Colors.black),
+                    //               borderRadius: BorderRadius.circular(10)
+                    //             ),
+                    //             child: Center(child: Text(widget.productDetails.size[index])),
+                    //           ),
+                    //         );
+                    //       }
+                    //   ),
+                    // ),
                     const SizedBox(height: 20,),
                     Row(
                       children: [
@@ -200,8 +225,11 @@ class _ProductDetailsPageState extends State<ProductDetailsPage> {
                         const Spacer(),
                         GestureDetector(
                           onTap: () {
+                            if (selectedSize == null) {
+                              CustomSnackBar.show(context, 'Please select a size before adding to cart.');
+                              return;
+                            }
                             OverlayLoader.show(context);
-
                             context.read<ShoppingCartBloc>().add(
                               AddItemToCart(
                                   userId: Util.uid!,

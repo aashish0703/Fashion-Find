@@ -122,6 +122,12 @@ class BannersWidget extends StatelessWidget {
                                         subSubcategoryId: "ssc-mtwshirts-03"));
                                 Navigator.pushNamed(context, Routes.productPage, arguments: "Shirts");
                               }
+                              if(index == 3) {
+                                context.read<ProductPageBloc>().add(
+                                    LoadSubSubCategoryProductEvent(
+                                        subSubcategoryId: "ssc-mfwfs-03"));
+                                Navigator.pushNamed(context, Routes.productPage, arguments: "Formal Shoes");
+                              }
                             },
                             child: Container(
                               margin: const EdgeInsets.symmetric(horizontal: 3 , vertical: 8),
